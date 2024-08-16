@@ -1,7 +1,7 @@
 # TrashCode
 a programming language that supports practically nothing.
 
-##Benchmarking
+## Benchmarking
 A simple benchmark in TrashCode would look like this: (written in v0.2-beta)
 ```lua
 local a = 5
