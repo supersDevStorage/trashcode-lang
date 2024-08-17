@@ -2,14 +2,21 @@
 a programming language that supports practically nothing.
 
 ## Benchmarking
-A simple benchmark in TrashCode would look like this: (written in v0.2-beta)
+Perfect square benchmark (v0.2.2-beta):
+Averaged: 2031.483ms at runtime, performed 10 tests total.
 ```lua
-local a = 5
-local g = 0
-local start = program.timerStart()
-for i = 1, 1000000 do
-	g = i + a
+local endNum = 10000
+local squareLargerThanEnd = 1
+
+while (squareLargerThanEnd * squareLargerThanEnd) < endNum do
+	squareLargerThanEnd = squareLargerThanEnd + 1
 end
-local diff = program.timerStop(5)
-print(diff)
+
+for i = 1, endNum do
+	for j = 1, squareLargerThanEnd do
+		if (j * j) == i then
+			print("Perfect square: " .. i)
+		end
+	end
+end
 ```
