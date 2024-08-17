@@ -2,8 +2,8 @@
 a programming language that supports practically nothing.
 
 ## Benchmarking
-### Perfect square benchmark (v0.2.2-beta)
-Averaged: 2031.483ms at runtime, performed 10 tests total.
+### Perfect square benchmark (v0.2.2p1-beta)
+Averaged: 1279.223ms at runtime, performed 10 tests total.
 ```lua
 local endNum = 10000
 local squareLargerThanEnd = 1
