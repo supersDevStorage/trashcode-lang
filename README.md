@@ -1,5 +1,5 @@
 # TrashCode
-![:trash can:](https://freeimage.host/i/dG1ovus)
+![:trash can:](/images/trashcan.png)
 a programming language that supports practically nothing.
 
 ## Benchmarking
