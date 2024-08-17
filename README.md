@@ -1,5 +1,7 @@
 # TrashCode
 a programming language that supports practically nothing.
+## Getting Started
+To start, download a release from the [Releases](https://github.com/fleetDevStorage/trashcode-lang/releases) tab, preferably the [latest release](https://github.com/fleetDevStorage/trashcode-lang/releases/latest). For implementations in existing infrastructure, download the TrashCode standalone file. For other purposes, download the TrashCode debugging environment.
 
 ## Benchmarking
 
