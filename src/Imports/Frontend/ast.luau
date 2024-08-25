@@ -31,8 +31,7 @@ export type Stmt = { -- Statement
 export type Program = Stmt & {
 	kind: "Program",
 
-	body: {Stmt},
-	isAstInterface: boolean
+	body: {Stmt}
 }
 
 export type VarDeclaration = Stmt & {
