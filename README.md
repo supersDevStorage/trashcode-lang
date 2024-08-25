@@ -1,6 +1,11 @@
 # TrashCode
 a programming language that supports practically nothing.
 
+## Project Roadmap
+- [ ] Get a LuaU port up and running
+- [ ] Implement a more robust library of native functions
+- [ ] Improve performance at runtime
+
 ## Benchmarking
 
 ### Perfect square benchmark (v0.6-beta)
