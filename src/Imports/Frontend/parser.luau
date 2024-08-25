@@ -578,51 +578,18 @@ end
 local Parser = {}
 Parser = {
 	
-	produceAST = function(sourceCode: string, timeExecution : boolean): types.Program
+	produceAST = function(sourceCode: string): types.Program
 		local program: types.Program = {
 			kind = "Program",
 			body = {},
 			isAstInterface = false
 		}
-		if timeExecution then
-			local startTime = os.clock()
-			
-			tokens = tokenize(sourceCode)
-			
-			local diffTime = os.clock() - startTime
-			script.Parent.Parent.Parent.TimedExecutions.TokenizeTime.Value = diffTime * 1000
-			-- Parse until End of File
-			startTime = os.clock()
-			
-			if tokens[1].tokenType == TokenType.Comment then
-				local comment = tokens[1]
-				
-				if comment.value == "!astInterface" then
-					program.isAstInterface = true
-				end
-			end
-			
-			while notEOF() do
-				append(program.body, parseStmt())
-			end
-			
-			diffTime = os.clock() - startTime
-			script.Parent.Parent.Parent.TimedExecutions.ParseTime.Value = diffTime * 1000
-		else
-			tokens = tokenize(sourceCode)
+		
+		tokens = tokenize(sourceCode)
 
-			if tokens[1].tokenType == TokenType.Comment then
-				local comment = tokens[1]
-
-				if comment.value == "!astInterface" then
-					program.isAstInterface = true
-				end
-			end
-
-			-- Parse until End of File
-			while notEOF() do
-				append(program.body, parseStmt())
-			end
+		-- Parse until End of File
+		while notEOF() do
+			append(program.body, parseStmt())
 		end
 
 		return program
