@@ -3,8 +3,12 @@ a programming language that supports practically nothing.
 
 ## Benchmarking
 
-### Perfect square benchmark (v0.2.3-beta)
+### Perfect square benchmark (v0.6-beta)
+Averaged 1288.920ms at runtime, performed 20 tests total.
+### Perfect square benchmark (v0.5-beta)
 Averaged 1774.142ms at runtime, performed 20 tests total.
+
+Code ran: (for both versions above)
 ```lua
 local endNum = 10000 -- the cutoff point at which the squares of j will no longer be checked against i
 local squareLargerThanEnd = 1 -- the upper boundary of which the squares of j would exceed endNum
@@ -22,8 +26,10 @@ for i = 1, endNum do
 end
 ```
 
-### Perfect square benchmark (v0.2.2p1-beta)
+### Perfect square benchmark (v0.4.1-beta)
 Averaged: 1279.223ms at runtime, performed 10 tests total.
+
+Code ran: (for the version above)
 ```lua
 local endNum = 10000
 local squareLargerThanEnd = 1
