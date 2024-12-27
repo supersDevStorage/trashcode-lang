@@ -30,13 +30,11 @@ export type Stmt = { -- Statement
 
 export type Program = Stmt & {
 	kind: "Program",
-
 	body: {Stmt}
 }
 
 export type VarDeclaration = Stmt & {
 	kind: "VarDeclaration",
-
 	constant: boolean,
 	identifier: string,
 	value: Expr
@@ -44,7 +42,6 @@ export type VarDeclaration = Stmt & {
 
 export type FunctionDeclaration = Stmt & {
 	kind: "FunctionDeclaration",
-
 	name: string,
 	parameters: {string},
 	body: Stmt
@@ -52,14 +49,12 @@ export type FunctionDeclaration = Stmt & {
 
 export type WhileLoop = Stmt & {
 	kind: "WhileLoop",
-
 	condition: ConditionalExpr,
 	body: {Stmt}
 }
 
 export type ForLoop = Stmt & {
 	kind: "ForLoop",
-
 	identifier: string,
 	startIndex: Expr,
 	endIndex: Expr,
@@ -68,7 +63,6 @@ export type ForLoop = Stmt & {
 
 export type IfStatement = Stmt & {
 	kind: "IfStatement",
-
 	condition: ConditionalExpr,
 	body: {Stmt},
 	elseBody: {Stmt}?
@@ -84,7 +78,6 @@ export type Expr = Stmt & {
 
 export type BinaryExpr = Expr & {
 	kind: "BinaryExpr",
-
 	left: Expr,
 	right: Expr,
 	operator: string
@@ -92,20 +85,17 @@ export type BinaryExpr = Expr & {
 
 export type CommentExpr = Expr & {
 	kind: "CommentExpr",
-	
 	comment: string
 }
 
 export type AssignmentExpr = Expr & {
 	kind: "AssignmentExpr",
-	
 	assignee: Expr,
 	value: Expr
 }
 
 export type ConditionalExpr = Expr & {
 	kind: "ConditionalExpr",
-
 	left: Expr,
 	right: Expr,
 	operator: string
@@ -113,7 +103,6 @@ export type ConditionalExpr = Expr & {
 
 export type MemberExpr = Expr & {
 	kind: "MemberExpr",
-
 	object: Expr,
 	property: Expr,
 	isComputed: boolean -- computed memberexprs are object[property], while non-computed are object.property
@@ -121,52 +110,44 @@ export type MemberExpr = Expr & {
 
 export type FunctionExpr = Stmt & { -- these are functions without the name (ex. "function() end") instead of "function hi() end"
 	kind: "FunctionDeclaration",
-	
 	parameters: {string},
 	body: Stmt
 }
 
 export type ReturnExpr = Expr & {
 	kind: "CallExpr",
-
 	value: Expr,
 }
 
 export type CallExpr = Expr & {
 	kind: "CallExpr",
-
 	base: Expr,
 	args: {Expr},
 }
 
 export type Identifier = Expr & {
 	kind: "Identifier",
-	
 	symbol: string
 }
 
 export type NumericLiteral = Expr & {
 	kind: "NumericLiteral",
-	
 	value: number
 }
 
 export type StringLiteral = Expr & {
 	kind: "StringLiteral",
-
 	value: string
 }
 
 export type Property = Expr & {
 	kind: "Property",
-
 	key: string,
 	value: Expr
 }
 
 export type ObjectLiteral = Expr & {
 	kind: "ObjectLiteral",
-
 	properties: {Property}
 }
 
